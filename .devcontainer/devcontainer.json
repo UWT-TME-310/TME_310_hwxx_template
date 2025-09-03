@@ -1,7 +1,7 @@
 {
   "name": "TME 310A Physical Modeling",
   "image": "mcr.microsoft.com/devcontainers/python:3.10",
-  "postCreateCommand": "apk add --no-cache uv && uv pip install -e .",
+  "postCreateCommand": "curl -Ls https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz | tar xz -C /tmp && sudo cp /tmp/uv-x86_64-unknown-linux-gnu/uv /usr/local/bin/ && sudo chmod +x /usr/local/bin/uv",
   "customizations": {
     "vscode": {
       "extensions": [
