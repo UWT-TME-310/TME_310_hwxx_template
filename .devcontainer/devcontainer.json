@@ -1,12 +1,12 @@
 {
   "name": "TME 310A Physical Modeling",
   "image": "mcr.microsoft.com/devcontainers/python:3.10",
-  "postCreateCommand": "curl -Ls https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz | tar xz -C /tmp && sudo cp /tmp/uv-x86_64-unknown-linux-gnu/uv /usr/local/bin/ && sudo chmod +x /usr/local/bin/uv",
+  "postCreateCommand": "curl -Ls https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz | tar xz -C /tmp && sudo cp /tmp/uv-x86_64-unknown-linux-gnu/uv /usr/local/bin/ && sudo chmod +x /usr/local/bin/uv && cd .config && uv sync",
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-python.python",
-        "marimo-ai.marimo-vscode",
+        "marimo-team.vscode-marimo",
         "GitHub.copilot"
       ]
     }
