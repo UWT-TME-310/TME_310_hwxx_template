@@ -1,52 +1,51 @@
-# Homework XX: [Assignment Title]
+# TME 310 Assignment - GitHub Codespaces Setup
 
-## Quick Start
+## Quick Start (No Installation Required!)
 
-1. **Run the setup script:**
-   ```bash
-   ./setup.sh
-   ```
+### Step 1: Open in Codespaces
+1. Click the green "Code" button above
+2. Select "Codespaces" tab
+3. Click "Create codespace on main" (or "Open with Codespaces")
+4. Wait for the environment to build (2-3 minutes first time)
 
-2. **Start working with marimo:**
-   ```bash
-   marimo edit homework_xx.py
-   ```
+### Step 2: Start marimo
+1. Open terminal in VS Code: `Terminal → New Terminal`
+2. Run the command: `marimo edit assignment.py`
+3. Click the link that appears (usually `http://localhost:2718`)
+4. Your assignment will open in a new browser tab
 
-3. **Enable AI Chat (if you have GitHub Copilot):**
-   - If prompted, run: `gh auth login`
-   - Restart the codespace
-   - AI chat will be available in the marimo interface
+### Step 3: Work on Assignment
+- Complete your work in the marimo notebook interface
+- marimo automatically saves to `assignment.py`
+- Your changes are automatically synced to the Codespace
 
-## Instructions
-- Complete `homework_xx.py` using marimo.
-- Refer to the objectives and reflection prompts in the notebook.
-- Run any provided self-check tests in `/tests` as needed.
-- When finished, commit and push your work to your GitHub Classroom repository.
-
-## Assignment Details
-- **Due date:** [Fill in]
-- **Submission:** [Instructions for submission]
-- **Resources:** See `/resources` for platform guides.
+### Step 4: Submit Your Work
+1. In VS Code, go to Source Control panel (Ctrl/Cmd + Shift + G)
+2. Stage your changes (click + next to `assignment.py`)
+3. Write a commit message (e.g., "Complete assignment")
+4. Click "Commit" then "Sync Changes"
 
 ## Troubleshooting
 
-### Virtual Environment Issues
-If new terminals don't activate the virtual environment automatically:
-- Run: `source .venv/bin/activate`
-- Or restart the codespace
+**If marimo doesn't start:**
+```bash
+pip install marimo
+marimo edit assignment.py
+```
 
-### AI Chat Not Working
-- Ensure you have GitHub Copilot access through your student account
-- Run: `gh auth login` and follow the prompts
-- Restart the codespace after authentication
+**If you see "port already in use":**
+- Close any existing marimo tabs
+- Run: `pkill marimo` then try again
 
-### Marimo Issues
-- If marimo doesn't start: `source .venv/bin/activate && marimo edit homework_xx.py`
-- Check that all dependencies are installed: `uv sync`
+**If Codespace seems slow:**
+- Codespaces can take a moment to "wake up"
+- Try refreshing the browser tab
 
-## Instructor Checklist (Update before creating assignment repo)
-- [ ] Update assignment number/title
-- [ ] Add assignment-specific instructions
-- [ ] Edit starter code in notebook
-- [ ] Add/remove resource files as needed
-- [ ] Ensure no solution or grading code is present
+## Need Help?
+- Use VS Code's built-in GitHub Copilot for coding assistance
+- Ask questions in our class discussion forum
+- Attend office hours for conceptual help
+
+---
+
+*This assignment uses marimo notebooks - a reactive Python environment that automatically updates dependent cells when you make changes.*

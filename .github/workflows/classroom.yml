@@ -1,0 +1,73 @@
+name: TME 310 Autograding
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install pytest
+    
+    - name: Test marimo notebook syntax
+      run: |
+        python -c "
+        import marimo
+        # Test that the notebook loads without errors
+        app = marimo.read('assignment.py')
+        print('✓ Notebook syntax is valid')
+        "
+    
+    - name: Run basic functionality tests
+      run: |
+        python -c "
+        # Import the notebook as a module to test functions
+        import subprocess
+        import sys
+        
+        # Execute the notebook and capture any errors
+        result = subprocess.run([sys.executable, 'assignment.py'], 
+                              capture_output=True, text=True, timeout=30)
+        
+        if result.returncode != 0:
+            print('✗ Notebook execution failed:')
+            print(result.stderr)
+            sys.exit(1)
+        else:
+            print('✓ Notebook executes successfully')
+        "
+    
+    - name: Check for required elements
+      run: |
+        python -c "
+        with open('assignment.py', 'r') as f:
+            content = f.read()
+        
+        checks = [
+            ('numpy import', 'import numpy' in content or 'import np' in content),
+            ('matplotlib import', 'import matplotlib' in content or 'import plt' in content),
+            ('validation section', 'validation' in content.lower() or 'check' in content.lower()),
+        ]
+        
+        for check_name, passed in checks:
+            if passed:
+                print(f'✓ {check_name} found')
+            else:
+                print(f'⚠ {check_name} missing (not required but recommended)')
+        
+        print('✓ Basic requirements check complete')
+        "
