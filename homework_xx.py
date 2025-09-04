@@ -1,20 +1,20 @@
 import marimo
 
-__generated_with = "0.4.8"
+__generated_with = "0.15.2"
 app = marimo.App()
 
 
 @app.cell
-def header():
-    """
+def header(mo):
+    mo.md(
+        r"""
     # Homework Assignment XX
 
     **Name:**  
     **Student ID:**  
-    **Date:**  
-
-    ---
+    **Date:**
     """
+    )
     return
 
 
@@ -39,7 +39,7 @@ def question_1():
     """
     # Your answer here:
     answer_1 = ""
-    return answer_1
+    return
 
 
 @app.cell
@@ -62,7 +62,7 @@ def question_2():
     plt.xlabel("x")
     plt.ylabel("y")
     plt.show()
-    return x, y
+    return
 
 
 @app.cell
@@ -74,7 +74,13 @@ def reflection():
     """
     # Your reflection here:
     reflection_text = ""
-    return reflection_text
+    return
+
+
+@app.cell
+def _():
+    import marimo as mo
+    return (mo,)
 
 
 if __name__ == "__main__":

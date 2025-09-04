@@ -1,0 +1,36 @@
+# Marimo configuration template for TME 310 students
+# This file will be copied to ~/.config/marimo/marimo.toml
+
+[formatting]
+line_length = 79
+
+[ai]
+rules = "You are helping with physical modeling assignments in TME 310. Focus on engineering principles, mathematical modeling, and Python implementations for physical systems."
+mode = "ask"
+
+[ai.models]
+custom_models = []
+displayed_models = []
+
+[ai.github]
+# GitHub Copilot integration - requires students to have GitHub Copilot access
+# This will use their existing GitHub authentication
+
+[completion]
+activate_on_typing = true
+copilot = "github"
+
+[package_management]
+manager = "uv"
+
+[runtime]
+auto_instantiate = true
+auto_reload = "lazy"
+on_cell_change = "autorun"
+
+[save]
+autosave = "after_delay"
+autosave_delay = 1000
+
+[server]
+browser = "default"
