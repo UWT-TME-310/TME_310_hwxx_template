@@ -9,13 +9,5 @@
             "args": ["--init-file", "/workspaces/TME_310_hwxx_template/.bashrc"]
         }
     },
-    "files.exclude": {
-        ".*": true,
-        "setup.sh": true,
-        "uv.lock": true,
-        "pyproject.toml": true,
-        "INSTRUCTOR_*.md": true,
-        "toggle-files.sh": true
-    },
     "explorer.excludeGitIgnoredFiles": false
 }
