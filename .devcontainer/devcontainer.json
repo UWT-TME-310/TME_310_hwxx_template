@@ -15,9 +15,16 @@
         "jupyter.askForKernelRestart": false,
         "jupyter.interactiveWindow.collapseCellInputCode": "firstLine",
         "files.exclude": {
-          ".*": true
+          ".*": true,
+          "test_*": true
         },
-        "workbench.sideBar.location": "right"
+        "workbench.sideBar.location": "right",
+        "github.copilot.enable": {
+          "*": true,
+          "plaintext": false,
+          "markdown": false
+        },
+        "github.copilot.editor.enableAutoCompletions": false
       }
     }
   }
