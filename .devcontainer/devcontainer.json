@@ -7,12 +7,17 @@
       "extensions": [
         "ms-python.python",
         "ms-toolsai.jupyter",
-        "GitHub.copilot"
+        "GitHub.copilot",
+        "ms-toolsai.datawrangler"
       ],
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python",
         "jupyter.askForKernelRestart": false,
-        "jupyter.interactiveWindow.collapseCellInputCode": "firstLine"
+        "jupyter.interactiveWindow.collapseCellInputCode": "firstLine",
+        "files.exclude": {
+          ".*": true
+        },
+        "workbench.sideBar.location": "right"
       }
     }
   }
