@@ -1,1 +1,0 @@
-# TME 310 Assignment - GitHub Codespaces with Jupyter

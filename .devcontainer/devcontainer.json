@@ -19,6 +19,8 @@
           "test_*": true
         },
         "workbench.sideBar.location": "right",
+        "workbench.activityBar.location": "top",
+        "workbench.secondarySideBar.defaultVisibility": "visible",
         "github.copilot.enable": {
           "*": true,
           "plaintext": false,
