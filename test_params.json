@@ -1,0 +1,45 @@
+{
+    "problem_1": {
+        "content_assertions": {
+            "script_contains": [
+                "a",
+                "b",
+                "c"
+            ],
+            "script_patterns": [
+                "[+\\-*/]",
+                "\\ba\\b",
+                "\\bb\\b",
+                "\\bc\\b"
+            ],
+            "min_lines": 3,
+            "required_variables": [
+                "a",
+                "b",
+                "c"
+            ],
+            "forbidden_functions": [
+                "eval",
+                "exec"
+            ]
+        },
+        "execution_assertions": {}
+    },
+    "problem_2": {
+        "content_assertions": {
+            "script_contains": [
+                "def",
+                "print"
+            ],
+            "script_patterns": [
+                "\\bdef\\s+\\w+\\s*\\(",
+                "print\\s*\\("
+            ],
+            "min_lines": 3,
+            "required_functions": [
+                "my_func"
+            ]
+        },
+        "execution_assertions": {}
+    }
+}
