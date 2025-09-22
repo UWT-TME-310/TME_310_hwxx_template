@@ -1,4 +1,7 @@
 # Pytest hooks for problem-specific testing
+import pytest
+
+
 def pytest_addoption(parser):
     """Add command line option for specifying which problem to test."""
     parser.addoption(
@@ -17,11 +20,11 @@ def pytest_collection_modifyitems(config, items):
         # No problem specified - structure tests run normally, others are skipped
         for item in items:
             if any(
-                mark.name in ["content", "execution"] for mark in item.iter_markers()
+                mark.name in ["completeness", "code"] for mark in item.iter_markers()
             ):
                 item.add_marker(
                     pytest.mark.skip(
-                        reason="No problem specified. Use --problem N to run content/execution tests."
+                        reason="No problem specified. Use --problem N to run completeness/code tests."
                     )
                 )
         return
@@ -35,7 +38,7 @@ def pytest_collection_modifyitems(config, items):
             continue
 
         # For content and execution tests, add problem number to test
-        if any(mark.name in ["content", "execution"] for mark in item.iter_markers()):
+        if any(mark.name in ["completeness", "code"] for mark in item.iter_markers()):
             # Store the problem number for the test to use
             item.problem_number = problem_number
             filtered_items.append(item)
