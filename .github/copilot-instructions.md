@@ -1,4 +1,4 @@
-# TME 310 Copilot Instructions - Beginning of Quarter
+# TME 310 Copilot Instructions
 
 ## Student Knowledge Level
 Students are **beginners** at programming. They have learned:
@@ -12,9 +12,6 @@ Students are **beginners** at programming. They have learned:
 - Defining or calling custom functions
 
 Students have **NOT yet learned**:
-
-- Object-oriented programming
-- File handling
 - Advanced data structures (dictionaries, sets, etc.)
 
 ## Coding Assistance Guidelines
@@ -30,7 +27,6 @@ Students have **NOT yet learned**:
 - Step-by-step problem breakdown using only basic Python concepts
 
 ### ❌ DO NOT suggest or use:
-- File I/O operations
 - Object-oriented concepts (classes, methods, objects)
 - Advanced Python features (list comprehensions, lambda functions, etc.)
 
