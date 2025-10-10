@@ -1,14 +1,22 @@
 {
   "name": "TME 310 - Jupyter",
-  "image": "mcr.microsoft.com/devcontainers/python:3.11",
-  "postCreateCommand": "pip install -r requirements.txt ",
+  // Use prebuilt image from GitHub Container Registry for fast startup
+  // To rebuild: push changes to main branch or manually trigger workflow
+  "image": "ghcr.io/uwt-tme-310/tme_310_hwxx_template:latest",
+
+  // Fallback: uncomment to build locally during development
+  // "build": {
+  //   "dockerfile": "Dockerfile",
+  //   "context": ".."
+  // },
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-python.python",
         "ms-toolsai.jupyter",
         "GitHub.copilot",
-        "ms-toolsai.datawrangler"
+        "ms-toolsai.datawrangler",
+        "quarto.quarto"
       ],
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python",
