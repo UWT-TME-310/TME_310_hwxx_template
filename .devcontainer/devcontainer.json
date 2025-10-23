@@ -1,25 +1,20 @@
 {
-  "name": "Python + Jupyter (fast start)",
-  "image": "mcr.microsoft.com/devcontainers/python:3.11",
-  "features": {},
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "hostRequirements": {
+    "cpus": 4
+  },
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "python3 -m pip install -r requirements.txt",
+  "postCreateCommand": "",
   "customizations": {
+    "codespaces": {
+      "openFiles": []
+    },
     "vscode": {
       "extensions": [
-        "ms-python.python",
         "ms-toolsai.jupyter",
-        "github.copilot",
-        "github.copilot-chat",
-        "ms-toolsai.datawrangler",
-        "quarto.quarto"
-      ],
-      "settings": {
-        "python.analysis.indexing": true,
-        "jupyter.askForKernelRestart": false
-      }
+        "ms-python.python"
+      ]
     }
-  },
-  "onCreateCommand": "pip install -U pip && if [ -f requirements.txt ]; then pip install -r requirements.txt; fi",
-  "postCreateCommand": "",
-  "postStartCommand": "",
-  "updateContentCommand": "if [ -f requirements.txt ]; then pip install -r requirements.txt; fi"
+  }
 }
